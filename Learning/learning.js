@@ -41,6 +41,8 @@ function sumZP(obj){
 }
 //console.log(sumZP(salaries));
 
+//||||||||||||||||||||||||||||||||||||||||||||\
+// max ZP 
 
 function maxZP(obj){
     var sum=0;
@@ -53,5 +55,31 @@ function maxZP(obj){
     }
     return (maxWorker||"Нет сотрудников")
 }
-console.log(maxZP(salaries));
-console.log(maxZP(schedule));
+//console.log(maxZP(salaries));
+//console.log(maxZP(schedule));
+
+//|||||||||||||||||||||||||||||||||||||||||\
+// ZP*2
+
+var menu = {
+    width: 200,
+    height: 300,
+    title: "My menu"
+};
+
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n)
+}
+
+function multiplyNumeric(obj){
+
+    for(var key in obj){
+        if (isNumeric(obj[key])){
+            obj[key]=2*obj[key];
+        }
+    }
+}
+
+multiplyNumeric(menu);
+
+console.log(menu);
