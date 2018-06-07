@@ -3,7 +3,6 @@ user.name = "Vasiliy";
 user.surname = "Petrov";
 user.name = "Sergey";
 delete user.name;
-console.log(user.surname.length);
 
 var schedule = {}
 //||||||||||||||||||||||||||||||||||||||||
@@ -12,10 +11,10 @@ var schedule = {}
 // возвращает true если объект пустой
 function isEmpty(obj) {
    for (var key in obj){
-       console.log('в объекте есть свойства')
+       //console.log('в объекте есть свойства')
         return(false);
    }
-   console.log('объект пуст')
+   //console.log('объект пуст')
    return(true);
 }
   
@@ -40,4 +39,19 @@ function sumZP(obj){
     }
     return (sum)
 }
-console.log(sumZP(salaries));
+//console.log(sumZP(salaries));
+
+
+function maxZP(obj){
+    var sum=0;
+    var maxWorker = "";
+    for (var key in obj){
+        if (sum<obj[key]){
+            sum = obj[key];
+            maxWorker=key;
+        }
+    }
+    return (maxWorker||"Нет сотрудников")
+}
+console.log(maxZP(salaries));
+console.log(maxZP(schedule));
