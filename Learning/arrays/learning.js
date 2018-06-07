@@ -102,7 +102,7 @@ for (var i =0; i<100; i++){
     allNumber[i]= i;
 }
 var p;
-console.log(allNumber);
+//console.log(allNumber);
 function sieveEratosfen (arr) {
     var p = 2;
 
@@ -126,7 +126,7 @@ var sum = 0;
 for (i = 0; i < arr.length; i++) {
   if (arr[i]) {
     sum += i;
-    console.log(arr[i]);
+    //console.log(arr[i]);
   }
 }
 }
