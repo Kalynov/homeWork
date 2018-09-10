@@ -41,6 +41,13 @@ app.get('/js',(req,res)=>{
     str ="script.js";
     res.sendfile(str);
 });
+
+app.get('/form',(req,res)=>{
+    str ="form.html";
+    res.sendfile(str);
+    
+});
+
 app.get('/add',(req,res)=>{
     connection.query("insert into users(userName,email,massange) values('"+req.query.userName+"', '"+req.query.email+"', '"+req.query.massange+"')",
     (err,rows,fields)=>{
