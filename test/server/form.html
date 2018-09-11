@@ -27,12 +27,13 @@
 
 
 
-    <form action="/add" method="get">
-        <input type="text" name="userName">
-        <input type="text" name="email">
-        <input type="text" name="massange">
-        <input type="submit" class="button">
+<!--     <form action="/add" method="get"> -->
+    <form >
+        <input id="userName" type="text" name="userName">
+        <input id="email" type="text" name="email">
+        <input id="massange" type="text" name="massange">
     </form>
+    <button type="button" class="btn btn-primary">send</button>
 
     <div class="container">
         <span class="list"></span>
@@ -43,25 +44,27 @@
   <div class="row">
       <div class="col-xs-12 col-sm-9 col-md-4 col-lg-6" style="background-color: #ff9999">First</div>
       <div class="col-xs-12 col-sm-3 col-md-8 col-lg-6" style="background-color: #99ccff">Second</div>
-      <!-- <div class="col-md-4" style="background-color: #00cc99">Thred</div> -->
+      <! <div class="col-md-4" style="background-color: #00cc99">Thred</div> -->
  <!--  </div>
   </div>  -->
     <script>
-
-        $('.button').click(()=>{
-            let add = $.get("/add",()=>{
-                alert(add);
-                let list = $.get("/list",()=>{
-                    console.log(list.responseText)
-                    let whatIsThis = $(".list").html(list.responseText);
-                });
-            })
-        })
-
+        let form = {}
         let list = $.get("/list",()=>{
-            console.log(list.responseText)
-            let whatIsThis = $(".list").html(list.responseText);
+            this.whatIsThis = $(".list").html(list.responseText);
         });
+
+        $('button').click(()=>{
+            form.userName = $("#userName").val();
+            form.eMail = $("#email").val();
+            form.massange = $("#massange").val();
+            console.log(form);
+            $.get('/add',form,()=>{
+                let list = $.get("/list",()=>{
+                    this.whatIsThis = $(".list").html(list.responseText);
+                });
+            });
+            
+        }) 
     </script>
 </body>
 </html>

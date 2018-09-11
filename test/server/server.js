@@ -24,7 +24,7 @@ app.get('/list',(req,res)=>{
     r = connection.query("select userName,email,massange from users",(err,rows,fields)=>{
         if(!err){
             for(var i in rows){
-                str += "userName: " + rows[i].userName +" eMail:" +rows[i].email + " massenge" +rows[i].massange + "<br>"
+                str += "userName: " + rows[i].userName +" eMail:" +rows[i].email + " massenge:" +rows[i].massange + "<br>"
             }
             res.send(str)
         }else{
@@ -43,17 +43,23 @@ app.get('/js',(req,res)=>{
 });
 
 app.get('/form',(req,res)=>{
+    console.log("страница формы обновилась")
     str ="form.html";
     res.sendfile(str);
     
 });
 
 app.get('/add',(req,res)=>{
-    connection.query("insert into users(userName,email,massange) values('"+req.query.userName+"', '"+req.query.email+"', '"+req.query.massange+"')",
+    console.log("Начало выполнения /add!")
+    console.log(req.query)
+    r = connection.query("insert into users(userName,email,massange) values('"+req.query.userName+"', '"+req.query.email+"', '"+req.query.massange+"')",
     (err,rows,fields)=>{
         if (!err){
+            console.log(req.query)
             res.send("ready");
         }else{
+            //console.log(r)
+            console.log(req.query)
             console.error("error while performing Query.");
         }
     })
