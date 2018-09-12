@@ -55,7 +55,7 @@
 
         $('button').click(()=>{
             form.userName = $("#userName").val();
-            form.eMail = $("#email").val();
+            form.email = $("#email").val();
             form.massange = $("#massange").val();
             console.log(form);
             $.get('/add',form,()=>{
