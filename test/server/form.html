@@ -21,23 +21,62 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <style>
   body { padding-top:50px; }
+  .bg_head{
+      width:100%;
+      height:50%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-color: #34373c;
+  }
+  textarea.form-control{
+    height: 100px;
+  }
+
+    .form-control{
+        background-color: #34373c;
+    }
   </style>
 </head>
-  <body class="container-fluid">
+  <body class="container">
+      <div class="bg_head">
 
 
 
 <!--     <form action="/add" method="get"> -->
-    <form >
+<!--     <form >
         <input id="userName" type="text" name="userName">
         <input id="email" type="text" name="email">
         <input id="massange" type="text" name="massange">
     </form>
     <button type="button" class="btn btn-primary">send</button>
+ -->
+  
+
+
+
+     <form>
+        <div class="form-group">
+            <div class="col-lg-3">
+                <label for="exampleInputEmail1">E-Mail</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">    
+                <label for="exampleInputName">Имя</label>
+                <input type="text" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Enter your name">
+            </div>
+            <div class="col-lg-6">
+                <label for="exampleInputText">Messenge</label>
+                <textarea type="text" class="form-control" id="massange" placeholder="Messenge"></textarea>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary">Записать</button>
+    </form>
+    </div>
+
 
     <div class="container">
         <span class="list"></span>
     </div>
+        
   
   <!-- <div class="jumbotron">
     <h1>3 различных блока </h1>
@@ -63,7 +102,6 @@
                     this.whatIsThis = $(".list").html(list.responseText);
                 });
             });
-            
         }) 
     </script>
 </body>
