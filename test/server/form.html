@@ -30,11 +30,15 @@
       background-color: #34373c;
   }
   textarea.form-control{
-    height: 100px;
+    height: 122px;
   }
   label{
       margin-top: 30px;
       color: white;
+  }
+  button{
+      margin-top: 40px;
+      margin-left: 10px;
   }
   .logo{
     margin-left: 20px;
@@ -45,7 +49,12 @@
     background-repeat: no-repeat;
     background-image: url(logo.svg);
   }
+  .form-control:focus{
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(190,57,59,0.49);
+  }
+
   .mail{
+    margin-left: 50px;
     height: 100px;
     width: 100px;
     background-size: 100px 100px;
@@ -54,30 +63,35 @@
 
     .form-control{
         background-color: #34373c;
+        border: 1px solid;
     }
   </style>
 </head>
   <body class="container">
         <div class="bg_head" >
-            <div class="col-lg-offset-3">
+            <div class="col-lg-offset-3 col-md-offset-3">
                 <div class="logo"></div>
             </div>
-            <div class="col-lg-offset-3">
+            <div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-5">
                     <div class="mail"></div>
             </div>
 
-            <form class="col-lg-offset-3">
+            <form class="col-lg-offset-3 col-md-offset-3 col-sm-offset-0">
                 <div class="form-group">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4 col-sm-6 ">
                         <label for="exampleInputEmail1">E-Mail</label>
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">    
                         <label for="exampleInputName">Имя</label>
                         <input type="text" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Enter your name">
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4 col-sm-6">
                         <label for="exampleInputText">Messenge</label>
                         <textarea type="text" class="form-control" id="massange" placeholder="Messenge"></textarea>
-                        <button type="button" class="btn btn-primary">Записать</button>
+                        <div class="form-group">
+                            <div class="col-lg-offset-8 col-md-offset-8 col-sm-offset-8">
+                                <button type="button" class="btn btn-primary">Записать</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
