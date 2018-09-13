@@ -32,6 +32,25 @@
   textarea.form-control{
     height: 100px;
   }
+  label{
+      margin-top: 30px;
+      color: white;
+  }
+  .logo{
+    margin-left: 20px;
+    margin-top:30px;
+    height: 33px;
+    width: 154px;
+    background-size: 154px 33px;
+    background-repeat: no-repeat;
+    background-image: url(logo.svg);
+  }
+  .mail{
+    height: 100px;
+    width: 100px;
+    background-size: 100px 100px;
+    background-image: url(ellipse.svg);
+  }
 
     .form-control{
         background-color: #34373c;
@@ -39,43 +58,35 @@
   </style>
 </head>
   <body class="container">
-      <div class="bg_head">
-
-
-
-<!--     <form action="/add" method="get"> -->
-<!--     <form >
-        <input id="userName" type="text" name="userName">
-        <input id="email" type="text" name="email">
-        <input id="massange" type="text" name="massange">
-    </form>
-    <button type="button" class="btn btn-primary">send</button>
- -->
-  
-
-
-
-     <form>
-        <div class="form-group">
-            <div class="col-lg-3">
-                <label for="exampleInputEmail1">E-Mail</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">    
-                <label for="exampleInputName">Имя</label>
-                <input type="text" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Enter your name">
+        <div class="bg_head" >
+            <div class="col-lg-offset-3">
+                <div class="logo"></div>
             </div>
-            <div class="col-lg-6">
-                <label for="exampleInputText">Messenge</label>
-                <textarea type="text" class="form-control" id="massange" placeholder="Messenge"></textarea>
+            <div class="col-lg-offset-3">
+                    <div class="mail"></div>
             </div>
+
+            <form class="col-lg-offset-3">
+                <div class="form-group">
+                    <div class="col-lg-4">
+                        <label for="exampleInputEmail1">E-Mail</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">    
+                        <label for="exampleInputName">Имя</label>
+                        <input type="text" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Enter your name">
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="exampleInputText">Messenge</label>
+                        <textarea type="text" class="form-control" id="massange" placeholder="Messenge"></textarea>
+                        <button type="button" class="btn btn-primary">Записать</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <button type="button" class="btn btn-primary">Записать</button>
-    </form>
-    </div>
 
 
-    <div class="container">
+   <!--  <div class="container">
         <span class="list"></span>
-    </div>
+    </div> -->
         
   
   <!-- <div class="jumbotron">

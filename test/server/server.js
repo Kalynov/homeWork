@@ -37,6 +37,14 @@ app.get('/',(req,res)=>{
     str ="index.html";
     res.sendfile(str);
 });
+app.get('/logo.svg',(req,res)=>{
+    str ="logo.svg";
+    res.sendfile(str);
+});
+app.get('/ellipse.svg',(req,res)=>{
+    str ="ellipse.svg";
+    res.sendfile(str);
+});
 app.get('/js',(req,res)=>{
     str ="script.js";
     res.sendfile(str);
