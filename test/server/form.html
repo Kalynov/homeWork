@@ -20,10 +20,9 @@
   <!-- Последняя компиляция и сжатый JavaScript -->  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <style>
-  body { padding-top:50px; }
   .bg_head{
       width:100%;
-      height:50%;
+      height:auto;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -39,6 +38,11 @@
   button{
       margin-top: 40px;
       margin-left: 10px;
+      background-color: #bd393b;
+      color: white;
+      font-weight: bold !important;
+      border-radius: 4px !important;
+
   }
   .logo{
     margin-left: 20px;
@@ -59,6 +63,8 @@
     width: 100px;
     background-size: 100px 100px;
     background-image: url(ellipse.svg);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(51, 51, 51, 0.64);
+    border-radius: 50%;
   }
 
     .form-control{
@@ -72,7 +78,7 @@
             <div class="col-lg-offset-3 col-md-offset-3">
                 <div class="logo"></div>
             </div>
-            <div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-5">
+            <div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-5 col-xs-offset-3">
                     <div class="mail"></div>
             </div>
 
@@ -88,8 +94,8 @@
                         <label for="exampleInputText">Messenge</label>
                         <textarea type="text" class="form-control" id="massange" placeholder="Messenge"></textarea>
                         <div class="form-group">
-                            <div class="col-lg-offset-8 col-md-offset-8 col-sm-offset-8">
-                                <button type="button" class="btn btn-primary">Записать</button>
+                            <div class="col-lg-offset-8 col-md-offset-8 col-sm-offset-8 col-xs-offset-8">
+                                <button type="button" class="btn btn-lg">Записать</button>
                             </div>
                         </div>
                     </div>
@@ -98,19 +104,12 @@
         </div>
 
 
-   <!--  <div class="container">
+    <div class="container">
         <span class="list"></span>
-    </div> -->
+    </div>
         
   
-  <!-- <div class="jumbotron">
-    <h1>3 различных блока </h1>
-  <div class="row">
-      <div class="col-xs-12 col-sm-9 col-md-4 col-lg-6" style="background-color: #ff9999">First</div>
-      <div class="col-xs-12 col-sm-3 col-md-8 col-lg-6" style="background-color: #99ccff">Second</div>
-      <! <div class="col-md-4" style="background-color: #00cc99">Thred</div> -->
- <!--  </div>
-  </div>  -->
+ 
     <script>
         let form = {}
         let list = $.get("/list",()=>{
