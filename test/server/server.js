@@ -20,13 +20,22 @@ connection.connect(function(err){
 
 
 app.get('/list',(req,res)=>{
+    var array = [];
+    var _obj={};
     var str = "";
     r = connection.query("select userName,email,massange from users",(err,rows,fields)=>{
         if(!err){
             for(var i in rows){
-                str += "userName: " + rows[i].userName +" eMail:" +rows[i].email + " massenge:" +rows[i].massange + "<br>"
+                _obj.userName = rows[i].userName;
+                _obj.email = rows[i].email;
+                _obj.massange = rows[i].massange;
+                array.push(_obj)
+
+                str += "userName: " + rows[i].userName +" eMail:" +rows[i].email + " massenge:" +rows[i].massange + "#"
+
             }
-            res.send(str)
+            console.log(array);
+            res.send(array)
         }else{
             console.log("error while performing Query.");
         }
