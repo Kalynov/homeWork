@@ -21,11 +21,11 @@ connection.connect(function(err){
 
 app.get('/list',(req,res)=>{
     var array = [];
-    var _obj={};
     var str = "";
     r = connection.query("select userName,email,massange from users",(err,rows,fields)=>{
         if(!err){
             for(var i in rows){
+                let _obj={};
                 _obj.userName = rows[i].userName;
                 _obj.email = rows[i].email;
                 _obj.massange = rows[i].massange;
