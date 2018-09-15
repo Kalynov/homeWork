@@ -30,9 +30,6 @@ app.get('/list',(req,res)=>{
                 _obj.email = rows[i].email;
                 _obj.massange = rows[i].massange;
                 array.push(_obj)
-
-                str += "userName: " + rows[i].userName +" eMail:" +rows[i].email + " massenge:" +rows[i].massange + "#"
-
             }
             console.log(array);
             res.send(array)
