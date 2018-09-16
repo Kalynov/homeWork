@@ -183,17 +183,13 @@
                 arrCards.forEach((element, i) => {
                     let index = i%2
                     let card = elementAppendTo("div","col-md-4  col-md-push-0 col-sm-5 col-sm-push-1",content,i);
-                    console.log(card);
                     elementAppendTo("h4",`name _${index}`,card,i,element.userName);
                     let name = elementAppendTo("div","row",card,i);
                     let mail = elementAppendTo("div","col-md-12",name);
-                    /* let mail = elementAppendTo("div","panel",name_next); */
                     elementAppendTo("h4","",mail,0,element.email);
                     elementAppendTo("p","",mail,0,element.massange);
                 });
-            console.log(list.responseJSON);
-            console.log(list.responseJSON[0]); 
-            console.log(list.responseJSON[0].userName);
+
             //this.whatIsThis = $(".list").html(list.responseText);
         });
 
@@ -206,10 +202,14 @@
             form.userName = $("#userName").val();
             form.email = $("#email").val();
             form.massange = $("#massange").val();
-            console.log(form);
-            $.get('/add',form,()=>{
-                getList();
-            });
+            if(form.email.indexOf("@") == -1){
+                alert("емаил должен содержать символыЖ @")
+            }else{
+            
+                $.get('/add',form,()=>{
+                    getList();
+                });
+            }
         }) 
     </script>
 </body>
