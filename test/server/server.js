@@ -25,7 +25,7 @@ app.get('/list',(req,res)=>{
     r = connection.query("select userName,email,massange from users",(err,rows,fields)=>{
         if(!err){
             for(var i in rows){
-                let _obj={};
+                var _obj={};
                 _obj.userName = rows[i].userName;
                 _obj.email = rows[i].email;
                 _obj.massange = rows[i].massange;
