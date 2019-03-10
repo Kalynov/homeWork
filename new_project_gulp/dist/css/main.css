@@ -1,3 +1,3 @@
-@import url(app/libs/magnific-popup/dist/magnific-popup.css);
+@import url(libs.css);
 body {
-  background-color: #d32323; }
+  background-color: white; }
