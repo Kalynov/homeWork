@@ -11,7 +11,10 @@ var gulp = require('gulp'),
     imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
     pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
     cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
-    autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
+    autoprefixer = require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления префиксов
+    jsonFormat = require('gulp-json-format');
+
+
 
 
 
@@ -83,7 +86,11 @@ gulp.task('clear', function (callback) {
     return cache.clearAll();
 })
 
-
+gulp.task('createjson', function() {
+    return gulp.src('app/data/*.json')
+        .pipe(jsonFormat(4))
+        .pipe(gulp.dest('dist/data'));
+});
 
 gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
@@ -114,6 +121,6 @@ gulp.task('default', function() {
     gulp.watch('app/*.html', gulp.parallel('code')); // Наблюдение за HTML файлами в корне проекта
     gulp.watch(['app/js/common.js', 'app/libs/**/*.js'], gulp.parallel('scripts')); // Наблюдение за главным JS файлом и за библиотеками
 });
-gulp.task('watch', gulp.parallel('css-libs', 'sass', 'scripts', 'browser-sync', 'default'));
+gulp.task('watch', gulp.parallel('css-libs', 'sass','createjson', 'scripts', 'browser-sync', 'default'));
 
-gulp.task('build', gulp.parallel('prebuild', 'clean', 'img', 'sass', 'scripts'));
+gulp.task('build', gulp.parallel('prebuild', 'clean', 'img', 'sass','createjson', 'scripts'));

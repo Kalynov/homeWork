@@ -1,9 +1,11 @@
+"use strict"
+
 function User (name) {
 
     this.name = name;
 
   this.sayHi = function() {
-    alert(this.name);
+    console.log(this.name);
   }
 
 }

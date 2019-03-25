@@ -1,9 +1,11 @@
-var json = require('./data.json');
 
+var myData
 
-var data = JSON.parse(json)
+d3.json("data/data.json",function(error,data){
+    myData = data;
+});
+console.log(myData);
 
-console.log(data)
 let user = new User("Вася");
 user.sayHi(); // Вася
 console.log("!Hi World!");
