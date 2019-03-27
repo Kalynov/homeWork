@@ -3,9 +3,8 @@ function DateWrapper(options) {
     var mainClass = options.class? options.class+" dateWrapper":"dateWrapper";
     var nowDate = new Date()
     var arrDate = nowDate.toString().split(" ")
-    var month = arrDate[0]
+    var month = arrDate[1]
     var date = arrDate[2]
-
     var elem;
     (function render(){
         ///wrapper
