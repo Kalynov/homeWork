@@ -6,7 +6,7 @@
   height: 80px;
   padding: 5px;
   background-color: #05abf6;
-  font-family: 'DejaVu Sans Mono', arial;
+  font-family: 'Liberation Sans', arial;
   -webkit-transform: rotate(-2deg);
       -ms-transform: rotate(-2deg);
           transform: rotate(-2deg);
@@ -37,3 +37,14 @@
     -webkit-transform: rotate(2deg);
         -ms-transform: rotate(2deg);
             transform: rotate(2deg); }
+
+.titleContainer {
+  position: absolute;
+  left: 170px;
+  top: 80px; }
+  .titleContainer .title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #05abf6;
+    font-family: 'Liberation Sans', arial;
+    letter-spacing: 2px; }
