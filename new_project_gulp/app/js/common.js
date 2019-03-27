@@ -1,11 +1,23 @@
 
 var myData
+console.log("myDate requare")
 
-d3.json("data/data.json",function(error,data){
+/* var myd3 = d3.json("data/data.json",function(error,data){
     myData = data;
+    console.log(data)
 });
-console.log(myData);
+var timeOut = setTimeout(function(){
+    console.log(myData);
+}) */
+
 
 let user = new User("Вася");
 user.sayHi(); // Вася
-console.log("!Hi World!");
+console.log(window);
+
+var date = new Date({
+    elem:document.body
+});
+
+date.render();
+
