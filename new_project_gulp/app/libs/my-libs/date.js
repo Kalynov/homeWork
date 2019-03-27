@@ -1,14 +1,27 @@
-function Date(options) {
-    var elem = options.elem;
+function DateWrapper(options) {
+    var parent = options.parent;
+    var nowDate = new Date()
+    var arrDate = nowDate.toString().split(" ")
+    var month = arrDate[0]
+    var date = arrDate[2]
+
+    var elem;
     function render(){
-        var textDate = Date.now();
+        ///wrapper
         elem = document.createElement('div');
-        elem.className = "date";
-        var titleElem = document.createElement('span');
-        elem.appendChild(titleElem);
-        titleElem.className = "title";
-        console.log(textDate)
-        //titleElem.textContent = textDate
+        elem.className = "dateWrapper";
+        //number
+        var number = document.createElement('div');
+        elem.appendChild(number);
+        number.className = "number";
+        number.textContent = date;
+        //month
+        var monthWrap = document.createElement('div');
+        elem.appendChild(monthWrap);
+        monthWrap.className = "month";
+        monthWrap.textContent = month;
+
+        parent.appendChild(elem)
     }
-    this.render = render;
+    render();
 }  

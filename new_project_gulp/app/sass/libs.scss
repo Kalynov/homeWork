@@ -1,0 +1,27 @@
+@import "app/libs/magnific-popup/dist/magnific-popup.css" ;
+
+.dateWrapper{
+    position: relative;
+    top: 70px;
+    width:80px;
+    height: 80px;
+    padding:5px;
+    background-color: #05abf6;
+    font-family:'DejaVu Sans Mono', arial;
+    transform: rotate(-2deg);
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    .number{
+        transform: rotate(2deg);
+        font-size: 32px;
+    }
+    .month{
+        font-size: 20px;
+        transform: rotate(2deg);
+    }
+}

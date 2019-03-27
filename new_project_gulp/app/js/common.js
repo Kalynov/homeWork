@@ -11,13 +11,10 @@ var timeOut = setTimeout(function(){
 }) */
 
 
-let user = new User("Вася");
-user.sayHi(); // Вася
-console.log(window);
 
-var date = new Date({
-    elem:document.body
+console.log(Date.now());
+var date = new DateWrapper({
+    parent:document.body
 });
 
-date.render();
 
