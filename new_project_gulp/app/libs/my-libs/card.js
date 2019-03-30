@@ -4,13 +4,18 @@ function Card(options) {
     var theme = options.theme? options.theme:"theme";
     var sourceText = options.sourceText? options.sourceText:"sourceText";
     var translateText = options.translate? options.translate:"Перевод";
+    var color = ['blue',"green","grey","red","yelow"].sort(compareRandom)[0];
+
+    function compareRandom() {
+        return Math.random() - 0.5;
+    }
 
     var elem;
     (function render(){
         var translate
         ///wrapper
         elem = document.createElement('div');
-        elem.className = mainClass;
+        elem.className = mainClass+" "+color;
 
         //title
         var title = new Title({
@@ -26,7 +31,6 @@ function Card(options) {
 
         //translate
         elem.onmousedown = function(event){
-            
             $(sourceContainer).animate({opacity:0},500,function(){
                 toogleTraslate();
                 $(sourceContainer).animate({opacity:1},500)

@@ -10,17 +10,28 @@ document.body.appendChild(cardContainer)
 var date = new DateWrapper({
     parent:document.body
 });
+
+var titleWrap = document.createElement("div")
+titleWrap.className ="titleWrapp";
+document.body.appendChild(titleWrap);
+
 var title = new Title({
     content:"New Phrases for today",
-    parent: document.body,
+    parent:titleWrap,
 })
-
-var card = new Card({
-    parent:cardContainer
-})
+let myVar1= "letVar";
 
 function cb(){
     console.log(myData)
+    myData.forEach(element => {
+        var card = new Card({
+            theme:element.theme,
+            sourceText:element.sourceText,
+            translate:element.translation,
+            parent:cardContainer
+        })
+    });
+    
 }
 
 
