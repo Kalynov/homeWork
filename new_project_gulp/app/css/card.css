@@ -23,8 +23,10 @@
       -ms-flex-item-align: start;
           align-self: flex-start; }
   .card .title {
-    font-size: 22px; }
+    font-size: 22px;
+    letter-spacing: 0px; }
   .card .source {
+    font-family: 'Liberation Sans', arial;
     font-size: 18px;
     line-height: 17px;
     margin-top: 10px; }

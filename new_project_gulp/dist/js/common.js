@@ -1,8 +1,6 @@
 
 var myData
-console.log("myDate requare")
-console.log(is_touch_device())
-    
+  
 function is_touch_device() {
     if('ontouchstart' in window || navigator.maxTouchPoints){
         document.body.className = "tuch"
