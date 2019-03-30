@@ -22,11 +22,12 @@
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start; }
-  .card:hover {
-    -webkit-box-shadow: 0 0 25px #386426;
-            box-shadow: 0 0 25px #386426; }
   .card .title {
-    font-size: 24px; }
+    font-size: 22px; }
+  .card .source {
+    font-size: 18px;
+    line-height: 17px;
+    margin-top: 10px; }
   .card.green {
     background-color: #36f8c7; }
   .card.blue {
@@ -37,3 +38,37 @@
     background-color: #f33162; }
   .card.yelow {
     background-color: #ffff3c; }
+
+body:not(.tuch) .card:hover {
+  -webkit-box-shadow: 0 0 25px #386426;
+          box-shadow: 0 0 25px #386426; }
+
+.cardsContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start; }
+  .cardsContainer .column {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }

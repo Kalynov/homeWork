@@ -1,6 +1,13 @@
 
 var myData
 console.log("myDate requare")
+console.log(is_touch_device())
+    
+function is_touch_device() {
+    if('ontouchstart' in window || navigator.maxTouchPoints){
+        document.body.className = "tuch"
+    }
+};
 
 
 let cardContainer = document.createElement("div")
@@ -19,10 +26,9 @@ var title = new Title({
     content:"New Phrases for today",
     parent:titleWrap,
 })
-let myVar1= "letVar";
+let cardsArray=[];
 
 function cb(){
-    console.log(myData)
     myData.forEach(element => {
         var card = new Card({
             theme:element.theme,
@@ -30,8 +36,16 @@ function cb(){
             translate:element.translation,
             parent:cardContainer
         })
+        cardsArray.push(card);
     });
-    
+    let cardsWrap = document.createElement("div")
+    cardsWrap.className = "cardsWrap"
+    document.body.appendChild(cardsWrap)
+    let cards = new CardContainer({
+        parent:cardsWrap,
+        cards:cardsArray,
+        quantity:3,
+    })
 }
 
 

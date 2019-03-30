@@ -9,11 +9,15 @@
     padding: 15px;
     margin-bottom: 10px;
     align-self: flex-start;
-    &:hover{
-        box-shadow: 0 0 25px rgb(56,100,38);
-    }
+   
     .title{
-        font-size: 24px;
+        font-size: 22px;
+        
+    }
+    .source{
+        font-size: 18px;
+        line-height: 17px;
+        margin-top: 10px;
     }
     &.green{
         background-color: #36f8c7;
@@ -29,5 +33,22 @@
     }
     &.yelow{
         background-color: #ffff3c;
+    }
+}
+
+body:not(.tuch) .card:hover {
+    box-shadow: 0 0 25px rgb(56,100,38);
+}
+
+.cardsContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    .column{
+        display: flex;
+        flex-direction: column;
+
     }
 }

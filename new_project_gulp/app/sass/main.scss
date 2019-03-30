@@ -4,16 +4,12 @@
 body{
     background-color: #ffffff;
 }
-.cardContainer{
-    position: absolute;
-    left: 144px;
-    top:222px;
-    width:880px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-content: flex-start;
+.cardsWrap{
+    position: relative;
+    top: 110px;
+    left: 85px;
+    padding: 0 100px;
+    width: 1065px;
 }
 
 .titleWrapp{
