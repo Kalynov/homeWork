@@ -109,9 +109,12 @@ gulp.task('code', function() {
 });
 
 gulp.task('css-libs', gulp.series('sass', function() {
-    return gulp.src('app/sass/libs.scss') // Выбираем файл для минификации
+    return gulp.src([
+        'app/css/libs.css',
+        'app/css/card.css'
+        ]) // Выбираем файл для минификации
+        .pipe(concat('libs.min.css')) 
         .pipe(cssnano()) // Сжимаем
-        .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
         .pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
 }));
 
@@ -123,4 +126,4 @@ gulp.task('default', function() {
 });
 gulp.task('watch', gulp.parallel('css-libs', 'sass','createjson', 'scripts', 'browser-sync', 'default'));
 
-gulp.task('build', gulp.parallel('prebuild', 'clean', 'img', 'sass','createjson', 'scripts'));
+gulp.task('build', gulp.parallel( 'css-libs','prebuild', 'clean', 'img', 'sass','createjson', 'scripts'));

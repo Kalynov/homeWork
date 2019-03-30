@@ -1,5 +1,4 @@
-@import url(libs.css);
-@import url(card.css);
+@import url(libs.min.css);
 body {
   background-color: #ffffff; }
 
